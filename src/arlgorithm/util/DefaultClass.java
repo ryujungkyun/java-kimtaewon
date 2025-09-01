@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class DefaultClass {
 
-    public String solution(String str) {
+    public static String solution(String str) {
         String answer = "";
         int m;
 
