@@ -16,6 +16,7 @@ public class PalindromeString {
             }
         }
         String origin = sb.toString();
+        System.out.println(origin);
         String reverse = sb.reverse().toString();
         if (origin.equals(reverse)) {
             return "YES";
