@@ -37,7 +37,7 @@ public class 두_배열_합치기 {
         int p1 = 0;
         int p2 = 0;
 
-        // List에 초기활당씨 grow로 인한 낭비 막을 수 있음
+        // List에 초기 활당으로 정확한 용량 화보
         List<Integer> result = new ArrayList<>(n + m);
         while (p1 < n && p2 < m) {
             if (arrN[p1] < arrM[p2]) {
