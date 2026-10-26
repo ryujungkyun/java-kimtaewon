@@ -1,37 +1,35 @@
 package Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class PrintBiggerNumber {
 
+    private static List<Integer> solution(int count, int[] arr) {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(arr[0]);
 
-
-    private static List<Integer> solution(int cnt, int[] inputs) {
-        ArrayList<Integer> answer = new ArrayList<>();
-        answer.add(inputs[0]);
-
-        for (int i = 1; i < cnt; i++) {
-            if (inputs[i] > inputs[i - 1]) {
-                answer.add(inputs[i]);
+        for (int i = 0; i < count - 1; i++) {
+            if (arr[i] < arr[i+1]) {
+                list.add(arr[i+ 1]);
             }
         }
 
-        return answer;
+        return list;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int cnt = sc.nextInt();
-        int[] inputs = new int[cnt];
+        int count = sc.nextInt();
+        int[] arr = new int[count];
 
-        for (int i = 0; i < cnt; i++) {
-            inputs[i] = sc.nextInt();  // 배열에 값 저장
+
+        for (int i = 0; i < count; i++) {
+            arr[i] = sc.nextInt();
         }
 
-        for (Integer x : solution(cnt, inputs)) {
+        for (Integer x : solution(count, arr)) {
             System.out.print(x + " ");
         }
     }

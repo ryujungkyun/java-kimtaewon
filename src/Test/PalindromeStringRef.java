@@ -4,17 +4,16 @@ import java.util.Scanner;
 
 public class PalindromeStringRef {
 
+
     private static String solution(String input) {
         input = input.toUpperCase().replaceAll("[^A-Z]", "");
-        StringBuilder sb = new StringBuilder(input);
-        String reverseStr = sb.reverse().toString();
 
-        if (input.equals(reverseStr)) {
-            return "YES";
-        } else {
-            return "NO";
+        for (int i = 0; i < input.length() / 2 ; i++){
+            if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
+                return "NO";
+            }
         }
-
+        return "YES";
     }
 
     public static void main(String[] args) {

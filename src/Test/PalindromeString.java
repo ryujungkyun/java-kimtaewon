@@ -4,22 +4,23 @@ import java.util.Scanner;
 
 public class PalindromeString {
 
+
     private static String solution(String input) {
+        String answer = "";
         input = input.toUpperCase();
-        StringBuilder answer = new StringBuilder();
-        for (char c : input.toCharArray()) {
-            if (Character.isAlphabetic(c) ) {
-                answer.append(c);
+        for (char x : input.toCharArray()) {
+            if (Character.isAlphabetic(x)) {
+                answer += x;
             }
         }
-        String origin = answer.toString();
-        String reverseStr = answer.reverse().toString();
-        if (origin.equals(reverseStr)) {
+
+        StringBuilder sb = new StringBuilder(answer);
+        String reverseStr = sb.reverse().toString();
+        if (answer.equals(reverseStr)) {
             return "YES";
         } else {
             return "NO";
         }
-
     }
 
     public static void main(String[] args) {
